@@ -4,12 +4,12 @@ require_relative "../config/environment.rb"
 #  with DB[:conn]
   
 class Student
-  attr_accessor :name, :grade, :id
+  attr_accessor :id, :name, :grade
   
-  def initialize(name, grade, id = nil)
+  def initialize(id= nil, name, grade)
+    @id = nil
     @name = name
     @grade = grade
-    @id = nil
   end
   
   def self.create_table
@@ -17,7 +17,7 @@ class Student
     CREATE TABLE IF NOT EXISTS students(
     id INTEGER PRMARY KEY,
     name TEXT, 
-    age INTEGER)
+    grade INTEGER)
     SQL
     DB[:conn].execute(sql)
   end
@@ -59,7 +59,7 @@ class Student
   def update
     sql = "UPDATE students SET name = ?, grade = ? 
     WHERE ID = ?"
-    DB[:conn].execute(sql, self.name, self.grade, self.id)
+    DB[:conn].execute(sql, self.id, self.name, self.grade )
   end
  
 end
