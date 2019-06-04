@@ -4,7 +4,7 @@ require_relative "../config/environment.rb"
 #  with DB[:conn]
   
 class Student
-  attr_accessor :name, :grade, 
+  attr_accessor :name, :grade
   
   def initialize(name, grade, id = nil)
     @name = name
