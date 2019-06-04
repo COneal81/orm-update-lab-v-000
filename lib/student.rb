@@ -13,7 +13,7 @@ class Student
   
   def self.create_table
     sql = <<-SQL
-    CREATE TALBE IF NOT EXISTS students(
+    CREATE TABLE IF NOT EXISTS students(
     id INTEGER PRMARY KEY,
     name TEXT, 
     age INTEGER)
