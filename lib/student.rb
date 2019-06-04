@@ -42,10 +42,8 @@ class Student
   end
     
   def update
-    sql =<<-SQL
-    "UPDATE students SET name = ?, grade = ? 
+    sql = "UPDATE students SET name = ?, grade = ? 
     WHERE ID = ?"
-    SQL
     DB[:conn].execute(sql, self.name, self.grade, self.id)
   end
  
